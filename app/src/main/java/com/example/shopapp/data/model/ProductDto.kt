@@ -1,8 +1,10 @@
 package com.example.shopapp.data.model
 
-
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+@Parcelize
 @Serializable
 data class ProductDto(
     @SerialName("category")
@@ -19,4 +21,4 @@ data class ProductDto(
     val ratingDto: RatingDto,
     @SerialName("title")
     val title: String
-)
+): Parcelable

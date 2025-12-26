@@ -19,7 +19,6 @@ class ProductListFragment : Fragment() {
 
     private var _binding: FragmentProductListBinding? = null
     private val binding get() = _binding!!
-
     private var adapter = ProductListAdapter {}
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +46,7 @@ class ProductListFragment : Fragment() {
             try {
                 val product = RetrofitService.api.getProductById(product.id)
                 val action = ProductListFragmentDirections.
-                actionProductListFragmentToProductDetailFragment(product)
+                actionProductListFragmentToProductDetailFragment(product.id)
 
                 findNavController().navigate(action)
             } catch (e: Exception) {
